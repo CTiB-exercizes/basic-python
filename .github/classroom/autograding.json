@@ -1,0 +1,164 @@
+{
+    "tests": [
+        {
+            "name": "Hello, world!",
+            "setup": "",
+            "run": "python3 src/hello.py",
+            "input": "",
+            "output": "Hello, World!",
+            "comparison": "exact",
+            "timeout": 10,
+            "points": 1
+        },
+        {
+            "name": "Checking hello for n == 0",
+            "setup": "",
+            "run": "python3 src/hello-n.py",
+            "input": "0",
+            "output": "How many times should I loop? ",
+            "comparison": "exact",
+            "timeout": 10,
+            "points": 1
+        },
+        {
+            "name": "Checking hello for n == 1",
+            "setup": "",
+            "run": "python3 src/hello-n.py",
+            "input": "1",
+            "output": "How many times should I loop? Hello, World!",
+            "comparison": "exact",
+            "timeout": 10,
+            "points": 1
+        },
+        {
+            "name": "Checking hello for n == 2",
+            "setup": "",
+            "run": "python3 src/hello-n.py",
+            "input": "2",
+            "output": "How many times should I loop? Hello, World!\nHello, World!",
+            "comparison": "exact",
+            "timeout": 10,
+            "points": 1
+        },
+        {
+            "name": "Checking do-you-want-to-stop.py",
+            "setup": "",
+            "run": "python3 src/do-you-want-to-stop.py; echo",
+            "input": "no\nno\nyes\n",
+            "output": "Do you want to stop? Do you want to stop? Do you want to stop? ",
+            "comparison": "exact",
+            "timeout": 10,
+            "points": 1
+        },
+        {
+            "name": "Running print-1-10.py",
+            "setup": "python3 src/print-1-10.py > print-1-10.txt",
+            "run": "./.test/scripts/cmp.sh print-1-10.txt .test/expected/print-1-10.txt",
+            "input": "",
+            "output": "",
+            "comparison": "exact",
+            "timeout": 10,
+            "points": 1
+        },
+        {
+            "name": "Running print-1-10-growing.py",
+            "setup": "python3 src/print-1-10-growing.py > print-1-10-growing.txt",
+            "run": "./.test/scripts/cmp.sh print-1-10-growing.txt .test/expected/print-1-10-growing.txt",
+            "input": "",
+            "output": "",
+            "comparison": "exact",
+            "timeout": 10,
+            "points": 1
+        },
+        {
+            "name": "Running pattern.py",
+            "setup": "python3 src/pattern.py > pattern.txt",
+            "run": "./.test/scripts/cmp.sh pattern.txt .test/expected/pattern.txt",
+            "input": "",
+            "output": "",
+            "comparison": "exact",
+            "timeout": 10,
+            "points": 1
+        },
+        {
+            "name": "Running list.py mean",
+            "setup": "",
+            "run": "python3 src/lists.py mean",
+            "input": "1 2 3 4 5",
+            "output": "3.0",
+            "comparison": "exact",
+            "timeout": 10,
+            "points": 1
+        },
+        {
+            "name": "Running list.py times",
+            "setup": "",
+            "run": "python3 src/lists.py times",
+            "input": "1 2 3 4 5",
+            "output": "3 6 9 12 15",
+            "comparison": "exact",
+            "timeout": 10,
+            "points": 1
+        },
+        {
+            "name": "Running list.py even",
+            "setup": "",
+            "run": "python3 src/lists.py even",
+            "input": "1 2 3 4 5",
+            "output": "2 4",
+            "comparison": "exact",
+            "timeout": 10,
+            "points": 1
+        },
+        {
+            "name": "Running counts.py",
+            "setup": "echo foobar | python3 src/counts.py > count.txt",
+            "run": "./.test/scripts/cmp.sh count.txt .test/expected/count.txt",
+            "input": "",
+            "output": "",
+            "comparison": "exact",
+            "timeout": 10,
+            "points": 1
+        },
+        {
+            "name": "Running password 'foobar'",
+            "setup": "",
+            "run": "python3 src/password.py foobar",
+            "input": "",
+            "output": "False",
+            "comparison": "exact",
+            "timeout": 10,
+            "points": 1
+        },
+        {
+            "name": "Running password 'Foob@r1'",
+            "setup": "",
+            "run": "python3 src/password.py Foob@r1",
+            "input": "",
+            "output": "True",
+            "comparison": "exact",
+            "timeout": 10,
+            "points": 1
+        },
+        {
+            "name": "Running hex encoding of 'foobar'",
+            "setup": "",
+            "run": "python3 src/hex.py encode foobar",
+            "input": "",
+            "output": "0x660x6f0x6f0x620x610x72",
+            "comparison": "exact",
+            "timeout": 10,
+            "points": 1
+        },
+        {
+            "name": "Running hex decoding of '0x660x6f0x6f0x620x610x72'",
+            "setup": "",
+            "run": "python3 src/hex.py decode 0x660x6f0x6f0x620x610x72",
+            "input": "",
+            "output": "foobar",
+            "comparison": "exact",
+            "timeout": 10,
+            "points": 1
+        }
+    ]
+}
